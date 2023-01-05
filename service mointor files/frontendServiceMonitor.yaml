@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+  labels:
+    app: frontend
+    release: hsop-prometheus
+  name: frontend
+  namespace: monitoring
+spec:
+  endpoints:
+  - path: /metrics
+    port: web
+    targetPort: 8080
+  namespaceSelector:
+    matchNames:
+    - observability
+  selector:
+    matchLabels:
+      app: frontend

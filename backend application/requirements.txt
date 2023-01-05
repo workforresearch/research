@@ -1,0 +1,9 @@
+flask==2.1.0
+requests
+pylint
+gunicorn
+pymongo
+flask_pymongo
+jaeger_client
+opentracing_instrumentation
+prometheus_client

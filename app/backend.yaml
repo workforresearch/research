@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: docker.io/researchwork/backendemo:v9
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    app: backend
+    release: hsop-prometheus
+  name: backend
+  namespace: observability
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 8080
+      name: web
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: backend
+  type: LoadBalancer
+
