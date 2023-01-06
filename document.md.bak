@@ -64,7 +64,7 @@ Subject: Exploring 500 error with Jaeger Tracer
 Affected Area: In Jaeger trecable application , there is one endpoint ('/star') has problem related to 'POST' methods.
 
 Severity: The defect has moderate priority because we are unable to achieve desired response and unable to implement it successfully.
-![alt-text](screenshots/jaeger error.PNG)
+![alt-text](screenshots/error detail.PNG)
 
 Description: We are unable to trace this function with 'POST' methods and If we change this 'POST' method to 'GET' then we have error in this code but now Jaeger is able to trace it and give the logs of error(screenshot: error detail). 
 
