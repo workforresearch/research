@@ -42,12 +42,12 @@ Durability: It is the time in which application should work properly and give de
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
-![alt-text](screenshots/jaeger 1.PNG)
-![alt-text](screenshots/jaeger 2.PNG)
+![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/jaeger%201.PNG)
+![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/jaeger%202.PNG)
 
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
-![alt-text](screenshots/jaeger metrics.PNG)
+![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/jaeger%20metrics.PNG)
 
 
 ## Report Error
@@ -64,9 +64,9 @@ Subject: Exploring 500 error with Jaeger Tracer
 Affected Area: In Jaeger trecable application , there is one endpoint ('/star') has problem related to 'POST' methods.
 
 Severity: The defect has moderate priority because we are unable to achieve desired response and unable to implement it successfully.
-![alt-text](screenshots/jaeger error.PNG)
 
-Description: We are unable to trace this function with 'POST' methods and If we change this 'POST' method to 'GET' then we have error in this code but now Jaeger is able to trace it and give the logs of error(screenshot: error detail). 
+Description: We are unable to trace this function with 'POST' methods and If we change this 'POST' method to 'GET' then we have error in this code but now Jaeger is able to trace it and give the logs of error:
+![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/jaeger%20error.PNG) 
 
 
 ## Creating SLIs and SLOs
