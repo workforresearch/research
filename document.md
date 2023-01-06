@@ -37,7 +37,7 @@ Durability: It is the time in which application should work properly and give de
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
-![alt-text](screenshots/uptime and error rate.PNG)
+![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/error%20rate%20dashboard.PNG)
 
 
 ## Tracing our Flask App
