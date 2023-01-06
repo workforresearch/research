@@ -6,10 +6,26 @@ import pymongo
 from flask_pymongo import PyMongo
 from jaeger_client import Config
 from opentracing_instrumentation.request_context import get_current_span, span_in_context
-from prometheus_client import generate_latest
-from time import perf_counter
+from prometheus_client import generate_latest,Summary,Counter,Gauge
+
 
 app = Flask(__name__)
+
+
+c = Counter('my_failures', 'This is 400 or 500 errors processing')
+
+with c.count_exceptions():
+    c.inc()
+
+g = Gauge('my_inprogress_requests', 'Description of gauge')
+
+with g.track_inprogress():
+    g.inc()
+
+s = Summary('request_processing_seconds','Time spent processing request')
+
+with s.time():
+    s.observe(10)
 
 @app.route('/metrics')
 def metrics():

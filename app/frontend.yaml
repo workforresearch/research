@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/researchwork/frontendemo:v6
+        image: docker.io/researchwork/frontendemo:v9
         ports:
         - containerPort: 8080
 

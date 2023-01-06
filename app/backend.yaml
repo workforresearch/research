@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: docker.io/researchwork/backendemo:v9
+        image: docker.io/researchwork/backendemo:v10
         ports:
         - containerPort: 8080
 ---
