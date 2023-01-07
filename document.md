@@ -3,6 +3,7 @@
 ## Verify the monitoring installation
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
 ![alt-text](screenshots/monitoring.PNG)
+![alt-text](screenshots/jaeger_pods_services.PNG)
 
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
@@ -37,7 +38,7 @@ Durability: It is the time in which application should work properly and give de
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
-![alt-text](https://raw.githubusercontent.com/workforresearch/research/main/screenshots/error%20rate%20dashboard.PNG)
+![alt-text](screenshots/error_rate_dashboard.PNG)
 
 
 ## Tracing our Flask App
@@ -71,9 +72,21 @@ Description: We are unable to trace this function with 'POST' methods and If we 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
+![alt-text](screenshots/slo.PNG)
+
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
+KPIs is a type of report which describe point of view such a way so that User can understand easily.
+Here we describe two KPIs point.
+1. latency : It is the measurement of delay between requests and response of an application.
+			 For latency we can use Two way either measure the time of processing of individual endpoint of application or use Prometheus library (Histogram or Summary).
+			 Here we are using Prometheus library directly called Histogram.
+![alt-text](screenshots/latency.PNG)
+2. Error rate : It is defined as (invalid response)/(total requests)
+				In our KPIs we are finding as (failure_total)/(total_requests)
+![alt-text](screenshots/error_rate.PNG)
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+![alt-text](screenshots/slo.PNG)
