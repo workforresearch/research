@@ -86,20 +86,9 @@ We also need some errors budget because all applications will not always work pe
   1. Our application will produce 5xx status code less than 1% in a month
   2. Service downtime will be 0.001% in next month.
 
-![alt-text](screenshots/slo.PNG)
-
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
-KPIs is a type of report which describe point of view such a way so that User can understand easily.
-Here we describe two KPIs point.
-1. latency : It is the measurement of delay between requests and response of an application.
-			 For latency we can use Two way either measure the time of processing of individual endpoint of application or use Prometheus library (Histogram or Summary).
-			 Here we are using Prometheus library directly called Histogram.
-![alt-text](screenshots/latency.PNG)
-2. Error rate : It is defined as (invalid response)/(total requests)
-				In our KPIs we are finding as (failure_total)/(total_requests)
-![alt-text](screenshots/error_rate.PNG)
 
 To achieve our SLO, I would collect KPIs everyday
 
@@ -110,8 +99,7 @@ To achieve our SLO, I would collect KPIs everyday
 5. Average number of requests per minute should be less than 50.
 
 ## Final Dashboard
-*TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
-![alt-text](screenshots/slo.PNG)
+*TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.
 
 Here
 
