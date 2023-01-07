@@ -72,6 +72,20 @@ Description: We are unable to trace this function with 'POST' methods and If we 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
+
+Here the SLOs is that our application has 99.95% uptime per month.
+
+For that,I try to measure the four signals:
+
+  1. Percentage of CPU and memory consumption in the last 1 month (for saturation).
+  2. Percentage of Infrastructure uptime in the last 1 month (for error).
+  3. The average number of requests per minute in the last 24 hours (for traffic).
+  4. Percentage of request response time less than 250 milliseconds (for latency).
+
+We also need some errors budget because all applications will not always work perfectly.
+  1. Our application will produce 5xx status code less than 1% in a month
+  2. Service downtime will be 0.001% in next month.
+
 ![alt-text](screenshots/slo.PNG)
 
 
@@ -87,6 +101,29 @@ Here we describe two KPIs point.
 				In our KPIs we are finding as (failure_total)/(total_requests)
 ![alt-text](screenshots/error_rate.PNG)
 
+To achieve our SLO, I would collect KPIs everyday
+
+1. CPU consumption should be less than 80%.
+2. Memory consumption should be less than 80%.
+3. Percentage of infrastructure uptime should be higher than 99.99%.
+4. There should not be any 500 errors in the last 1 hour.
+5. Average number of requests per minute should be less than 50.
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 ![alt-text](screenshots/slo.PNG)
+
+Here
+
+1. CPU utilization for all services about 31% which is less that 80%. 80% is our warning limit.
+2. Also there is individual service cpu utilization graph which help us to determine which service need more CPU.
+3. Memory utilization for my cluster is ~67% for all the services where total memory size 4GB.
+4. Same as CPU, there is also individual service memory utilization graph.
+5. There is also a service availability metrics, which shows our service availability 100% last one hour.
+6. Also shows the request latency
+
+![alt-text](screenshots/cpu_memory_usage.PNG)
+
+![alt-text](screenshots/service_availability.PNG)
+
+![alt-text](screenshots/service_rate.PNG)
